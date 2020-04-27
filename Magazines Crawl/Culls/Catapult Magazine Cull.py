@@ -19,22 +19,7 @@ import shutil
 import warnings
 warnings.filterwarnings('ignore')
 
-
-# In[3]:
-
-
-
-
-
-# In[10]:
-
-
 browser = webdriver.Chrome()
-
-
-# In[ ]:
-
-
 def drive_page(page_url, patience=6):
     """Drives pages and Loads DOM Element"""
     browser.get(page_url)
