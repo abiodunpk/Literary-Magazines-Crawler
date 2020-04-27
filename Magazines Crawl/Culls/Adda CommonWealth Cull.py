@@ -4,26 +4,23 @@
 # In[1]:
 
 
+from selenium import webdriver
 from fpdf import FPDF
+from tqdm import tqdm
+from bs4 import BeautifulSoup
+from fake_useragent import UserAgent
+from ebooklib import epub
+from time import sleep
 import requests
 import os
 import unicodedata
 import re
 import shutil
-from tqdm import tqdm
-from bs4 import BeautifulSoup
-from fake_useragent import UserAgent
-
-
-# In[4]:
-
+import warnings
+warnings.filterwarnings('ignore')
 
 import warnings
 warnings.filterwarnings("ignore")
-
-
-# In[5]:
-
 
 base_url = 'https://www.addastories.com'
 ua = UserAgent()
@@ -31,19 +28,10 @@ headers = {}
 headers['user_agent'] =  ua.chrome
 
 
-# In[6]:
-
-
 adda = requests.get(base_url, headers=headers, verify=False)
-
-
-# In[7]:
-
 
 soup = BeautifulSoup(adda.text, 'lxml')
 
-
-# In[8]:
 
 
 level_one_attrs = {'class': 'service-desc'}
