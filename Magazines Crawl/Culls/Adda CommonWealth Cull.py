@@ -19,9 +19,6 @@ import shutil
 import warnings
 warnings.filterwarnings('ignore')
 
-import warnings
-warnings.filterwarnings("ignore")
-
 base_url = 'https://www.addastories.com'
 ua = UserAgent()
 headers = {}
